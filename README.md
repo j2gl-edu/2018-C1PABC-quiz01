@@ -9,4 +9,8 @@
 
 ```sh
 mvn clean package
+
+java -Xmx5m -cp target/quiz01-1.0.jar edu.advanced.quiz01.HeapMemory
+java -Xmx5m -cp target/quiz01-1.0.jar edu.advanced.quiz01.MemoryStack
+java -Xmx5m -cp target/quiz01-1.0.jar edu.advanced.quiz01.NameList
 ```

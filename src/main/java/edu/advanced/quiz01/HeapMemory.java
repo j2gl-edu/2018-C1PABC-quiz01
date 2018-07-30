@@ -3,18 +3,25 @@ package edu.advanced.quiz01;
 public class HeapMemory {
 
     private String color;
-    private Integer myIneger;
-    private Float myFlaot;
+    private Integer myInteger;
+    private Float myFloat;
     private HeapMemory next;
 
-    public HeapMemory(String color, Integer myIneger, Float myFlaot) {
+    public HeapMemory(String color, Integer myInteger, Float myFloat) {
         this.color = color;
-        this.myIneger = myIneger;
-        this.myFlaot = myFlaot;
+        this.myInteger = myInteger;
+        this.myFloat = myFloat;
     }
 
     public void setNext(HeapMemory next) {
         this.next = next;
+    }
+
+    public void display() {
+        System.out.println("color    : " + color); 
+        System.out.println("myInteger: " + myInteger); 
+        System.out.println("myFloat  : " + myFloat); 
+        System.out.println("next     : " + next); 
     }
 
     public static void fillMemory() {
@@ -24,12 +31,13 @@ public class HeapMemory {
 
         HeapMemory h = null;
         while (true) {
-            if (h == null) {
-                h = new HeapMemory(color, i, f);
-            }
             HeapMemory current = new HeapMemory(color, i, f);
-            current.setNext(h);
-            h = current;
+            if (h == null) {
+                h = current;
+            } else {
+                current.setNext(h);
+                h = current;    
+            }
         }
     }
 

@@ -78,7 +78,7 @@ public class NameList {
 
     public static void main(String[] args) {
         NameList nameList = new NameList();
-        Node root = nameList.initializeList("Michael Jackson", 10);
+        Node root = nameList.initializeList("Isaac Newton", 10);
 
         System.out.println("Display Traditional:");
         nameList.displayTraditional(root);
